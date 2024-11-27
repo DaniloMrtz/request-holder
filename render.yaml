@@ -21,3 +21,6 @@ services:
     startCommand: python app.py
     autoDeploy: false # Disable automatic deploys
     maxShutdownDelaySeconds: 300 # Increase graceful shutdown period. Default: 30, Max: 300
+    envVars: # Environment variables
+      - key: PORT
+        value: 4000 # Hardcoded value
