@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import time
 import os
 
@@ -7,8 +7,9 @@ app = Flask(__name__)
 @app.route("/")
 def long_running_request():
     # Simulate a 4-minute delay
+    delay = request.args.get("delay", 130)
     print("Request received")
-    time.sleep(130)
+    time.sleep(delay)
     return "Request completed", 200
 
 if __name__ == "__main__":
